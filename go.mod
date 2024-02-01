@@ -1,3 +1,3 @@
 module github.com/IvanChalukov/sshfs-mount-checker
 
-go 1.23.0
+go 1.21
