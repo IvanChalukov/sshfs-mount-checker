@@ -61,8 +61,8 @@ func main() {
 	flag.Parse()
 
 	password := os.Getenv("SSHFS_PASSWORD")
-	if *username == "" || *url == "" || *remoteMountPoint == "" || *localMountPoint == "" {
-		log.Fatal("Username, URL, and mountpoint must all be provided.")
+	if *username == "" || *url == "" || *remoteMountPoint == "" || *localMountPoint == "" || *healthUrl == "" {
+		log.Fatal("username, URL, remoteMountPoint, localMountPoint and healthUrl  must all be provided.")
 	}
 
 	if !isMounted(*localMountPoint) {
