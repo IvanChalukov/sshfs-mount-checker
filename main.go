@@ -47,8 +47,10 @@ func sendUptimeKumaUpdate(uptimeKumaURL string) {
 
 	if resp.StatusCode == http.StatusOK {
 		fmt.Println("Update sent to Uptime Kuma successfully.")
+		return
 	} else {
 		fmt.Println("Uptime Kuma responded with status code:", resp.StatusCode)
+		return
 	}
 }
 
@@ -62,7 +64,7 @@ func main() {
 
 	password := os.Getenv("SSHFS_PASSWORD")
 	if *username == "" || *url == "" || *remoteMountPoint == "" || *localMountPoint == "" || *healthUrl == "" {
-		log.Fatal("username, URL, remoteMountPoint, localMountPoint and healthUrl  must all be provided.")
+		log.Fatal("username, url, remotemountpoint, localmountpoint and healthurl must all be provided.")
 	}
 
 	if !isMounted(*localMountPoint) {
